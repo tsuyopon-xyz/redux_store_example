@@ -11,7 +11,7 @@ export const todoReducer = (state = [], action) => {
         action.text
       ];
     case DELETE_TODO:
-      return state.filter((todo, index) => {
+      return state.filter((text, index) => {
         return action.index !== index;
       });
     default:
