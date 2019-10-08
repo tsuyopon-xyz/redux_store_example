@@ -1,4 +1,5 @@
-import { ADD_TODO } from './constants';
+export const ADD_TODO = 'ADD_TODO';
+export const DELETE_TODO = 'DELETE_TODO';
 
 export const addTodo = (text) => {
   return {
@@ -7,3 +8,9 @@ export const addTodo = (text) => {
   };
 };
 
+export const deleteTodo = (index) => {
+  return {
+    type: DELETE_TODO,
+    index
+  };
+};

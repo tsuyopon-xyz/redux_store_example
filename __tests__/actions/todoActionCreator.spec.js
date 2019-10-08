@@ -1,5 +1,9 @@
-import { ADD_TODO } from '../../actions/constants';
-import { addTodo } from '../../actions/todoActionCreator';
+import {
+  ADD_TODO,
+  DELETE_TODO,
+  addTodo,
+  deleteTodo
+} from '../../actions/todoActionCreator';
 
 describe('todoActionCreatorのテスト', () => {
   it('addTodo関数', () => {
@@ -10,6 +14,18 @@ describe('todoActionCreatorのテスト', () => {
       {
         type: ADD_TODO,
         text: dummyText
+      }
+    );
+  });
+
+  it('deleteTodo関数', () => {
+    const indexValue = 1;
+    const action = deleteTodo(indexValue);
+
+    expect( action ).toStrictEqual(
+      {
+        type: DELETE_TODO,
+        index: indexValue
       }
     );
   });
